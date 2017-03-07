@@ -1,0 +1,110 @@
+<!DOCTYPE>
+<html>
+  <head>
+      <title> Carer's Allowance </title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="../jQuery/script.js"></script>
+      <link href="../CSS/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1> The person you care for must be in receipt of one of the following benefits </h1>
+    <p> Please select which benefit the person you care for is receiving, and
+      provide details using the drop down boxes provided.
+    <div class="form">
+      <form>
+          <p> Personal Independence Payment (PIP) <input type="radio" name="select" value="select"> </p>
+            <select name="pip_living">
+              <option value="blank"> Select an option </option>
+              <option value="daily_living"> Daily Living Component - Standard Rate </option>
+              <option value="daily_living"> Daily Living Component - Enhanced Rate </option>
+              <option value="daily_living"> None </option>
+            </select>
+            <br /> <br />
+            <select name="pip_mobility">
+              <option value="blank"> Select an option </option>
+              <option value="mobility_pip"> Mobility Component - Standard Rate </option>
+              <option value="mobility_pip"> Mobility Component - Enhanced Rate </option>
+              <option value="mobility_pip"> None </option>
+            </select>
+
+           <p id="show_pip"> Click here to see Daily Living and Mobility rates. </p>
+              <div id="show_pip_rates">
+                <table style="width:100%">
+                  <tr>
+                    <th> Component </th>
+                    <th> Weekly Rate </th>
+                  </tr>
+                  <tr>
+                    <td> Daily Living Standard </td>
+                    <td> £55.10 </td>
+                  </tr>
+                  <tr>
+                    <td> Daily Living Enhanced </td>
+                    <td> £82.30 </td>
+                  </tr>
+                  <tr> <td> ------- </td>
+                  </tr>
+                  <tr>
+                    <td> Mobility Standard </td>
+                    <td> £21.80 </td>
+                  </tr>
+                  <tr>
+                    <td> Mobility Enhanced </td>
+                    <td> £57.45 </td>
+                  </tr>
+                </table>
+
+              </div>
+
+            <p> Daily Living Component (DLA) <input type="radio" name="select" value="select"></p>
+            <select name="dla_care">
+              <option value="blank"> Select an option </option>
+              <option value="care_dla"> Care Component - Lowest Rate </option>
+              <option value="care_dla"> Care Component - Middle Rate </option>
+              <option value="care_dla"> Care Component - Highest Rate </option>
+              <option value="care_dla"> None </option>
+            </select>
+            <br /> <br />
+            <select name="dla_mobility">
+              <option value="blank"> Select an option </option>
+              <option value="mobility_dla"> Mobility Component - Lower Rate </option>
+              <option value="mobility_dla"> Mobility Component - Higher Rate </option>
+              <option value="mobility_dla"> None </option>
+            </select>
+
+            <p id="show_dla"> Click here to see Daily Living and Mobility rates. </p>
+               <div id="show_dla_rates">
+                 <table style="width:100%">
+                   <tr>
+                     <th> Component </th>
+                     <th> Weekly Rate </th>
+                   </tr>
+                   <tr>
+                     <td> Lowest Care </td>
+                     <td> £21.80 </td>
+                   </tr>
+                   <tr>
+                     <td> Middle Care </td>
+                     <td> £55.10 </td>
+                   </tr>
+                   <tr>
+                     <td> Highest Care </td>
+                     <td> £82.30 </td>
+                   </tr>
+                   <tr> <td> ------- </td>
+                   </tr>
+                   <tr>
+                     <td> Lower Mobility </td>
+                     <td> £21.80 </td>
+                   </tr>
+                   <tr>
+                     <td> Higher Mobility </td>
+                     <td> £57.45 </td>
+                   </tr>
+                 </table>
+
+               </div>
+      </form>
+    </div>
+  </body>
+</html>
