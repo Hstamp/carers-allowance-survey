@@ -1,0 +1,191 @@
+<!DOCTYPE>
+<html>
+  <head>
+
+    <title> Carer's Allowance </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="jQuery/script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+    <link href="CSS/style.css" rel="stylesheet">
+
+  </head>
+<!-- About the Carer: Form -->
+  <body>
+    <div class="intro">
+      <h1> To qualify for Carer's Allowance, the following criteria must apply to you: </h1>
+    </div>
+
+    <div class="form">
+      <form id="carer_form">
+        <p class="question"> You are 16 or over </p>
+        <input class="answer" type="radio" name="q1" value="1">
+        Yes <br>
+          <input class="answer" type="radio" name="q1" value="0">
+        No <br>
+        <p class="question"> You spend at least 35 hours a week caring for someone </p>
+        <input class="answer" type="radio" name="q2" value="1">
+        Yes <br>
+          <input class="answer" type="radio" name="q2" value="0">
+        No <br>
+        <p class="question"> You have been in England, Scotland or Wales for at least 2 of the last 3 years </p>
+        <input class="answer" type="radio" name="q3" value="1">
+        Yes <br>
+          <input class="answer" type="radio" name="q3" value="0">
+        No <br>
+        <p class="question"> You normally live in England, Scotland or Wales, or you live abroad as a member of the armed forces </p>
+        <input class="answer" type="radio" name="q4" value="1">
+        Yes <br>
+          <input class="answer" type="radio" name="q4" value="0">
+        No <br>
+     <h1> You must also answer no to all of the following: </h1>
+        <p class="question"> Are you in in full time education? </p>
+        <input class="answer" type="radio" name="q5" value="0">
+        Yes <br>
+         <input class="answer" type="radio" name="q5" value="1">
+        No <br>
+        <p class="question"> Are you studying for 21 hours a week or more? </p>
+        <input class="answer" type="radio" name="q6" value="0">
+        Yes <br>
+         <input class="answer" type="radio" name="q6" value="1">
+        No <br>
+        <p class="question"> Do you earn more than £110 a week (after taxes, care costs while you’re at work and 50% of what you pay into your pension)? (Don’t count your pension as income) </p>
+        <input class="answer" type="radio" name="q7" value="0">
+        Yes <br>
+         <input class="answer" type="radio" name="q7" value="1">
+        No <br>
+        <p class="question"> Are you subject to immigration control </p>
+        <input class="answer" type="radio" name="q8" value="0">
+        Yes <br>
+         <input class="answer" type="radio" name="q8" value="1">
+        No <br>
+        <p class="question"> Are you receiving the full state pension? </p>
+        <input class="answer" type="radio" name="q9" value="0">
+        Yes <br>
+         <input class="answer" type="radio" name="q9" value="1">
+        No <br>
+        <br>
+      </form>
+
+      <div class="submitter">
+              <input class="quizSubmit" id="submitButton" onClick="submitQuiz()"
+              type="submit" value="Submit" />
+        </div>
+
+        <!--show score upon submit-->
+        <div>
+          <h2 class="quizScore" id="userScore"></h2>
+        </div>
+    <!--show only wrong answers on submit-->
+
+        <div class="quizAnswers" id="correctAnswer1"></div>
+    	  <div class="quizAnswers" id="correctAnswer2"></div>
+        <div class="quizAnswers" id="correctAnswer3"></div>
+        <div class="quizAnswers" id="correctAnswer4"></div>
+        <div class="quizAnswers" id="correctAnswer5"></div>
+    	  <div class="quizAnswers" id="correctAnswer6"></div>
+        <div class="quizAnswers" id="correctAnswer7"></div>
+        <div class="quizAnswers" id="correctAnswer8"></div>
+        <div class="quizAnswers" id="correctAnswer9"></div>
+
+
+  </body>
+
+  <script>
+  function submitQuiz() {
+    if($('input[name=q1]:checked').length<=0)
+    {
+    alert("Please select an option for every question in order to continue.")
+    return
+    }
+
+  		console.log('submitted');
+
+  	// get each answer score
+  		function answerScore (qName) {
+  			var radiosNo = document.getElementsByName(qName);
+
+  			for (var i = 0, length = radiosNo.length; i < length; i++) {
+     				if (radiosNo[i].checked) {
+  			// do something with radiosNo
+  					var answerValue = Number(radiosNo[i].value);
+  				}
+  			}
+  			// change NaNs to zero
+  			if (isNaN(answerValue)) {
+  				answerValue = 0;
+  			}
+  			return answerValue;
+  		}
+
+  	// calc score with answerScore function
+  		var calcScore = (answerScore('q1') + answerScore('q2') + answerScore('q3') + answerScore('q4') + answerScore('q5') + answerScore('q6') + answerScore('q7') + answerScore('q8') + answerScore('q9'));
+  		console.log("CalcScore: " + calcScore); // it works! To Test in console
+            	// print correct answers only if wrong (calls correctAnswer function)
+      if (answerScore('q1') === 0) {
+       document.getElementById('correctAnswer1').innerHTML = "You need to be over 16 years old to apply for Carer's Allowance";
+      }
+      if (answerScore('q2') === 0) {
+       document.getElementById('correctAnswer2').innerHTML = "You need to spend at least 35 hours caring for the person you care for. Read more about what this means <a href=#>here. </a>";
+      }
+      if (answerScore('q3') === 0) {
+       document.getElementById('correctAnswer3').innerHTML = "You need to have lived in England, Scotland or Wales for the last 2 of 3 years, and you need to be a resident of one of these places (or living abroad as part of the armed forces).";
+      }
+      if (answerScore('q4') === 0) {
+       document.getElementById('correctAnswer3').innerHTML = "You need to have lived in England, Scotland or Wales for the last 2 of 3 years, and you need to be a resident of one of these places (or living abroad as part of the armed forces).";
+      }
+      if (answerScore('q5') === 0) {
+       document.getElementById('correctAnswer5').innerHTML = "You cannot be in full time education and receive Carer's Allowance.";
+      }
+      if (answerScore('q6') === 0) {
+       document.getElementById('correctAnswer6').innerHTML = "You cannot be studying over 21 hours per week, as this means you are in full time education.";
+      }
+      if (answerScore('q7') === 0) {
+       document.getElementById('correctAnswer7').innerHTML = "If you earn above £110 a week, you cannot claim Carer's Allowance";
+      }
+      if (answerScore('q8') === 0) {
+       document.getElementById('correctAnswer8').innerHTML = "You cannot receive Carer's Allowance if you are subject to immigration control.";
+      }
+      if (answerScore('q9') === 0) {
+       document.getElementById('correctAnswer9').innerHTML = "You cannot apply for Carer's Allowance if you are receiving the full state pension.";
+      }
+
+
+  	// function to return correct answer string
+  	//	function correctAnswer (correctStringNo, qNumber) {
+  	//		console.log("qNumber: " + qNumber);  // logs 1,2,3,4 after called below
+  	//		return ("You are not eligible for carers allowance because you answered 'no' to question " + qNumber + "</strong>");
+    //  }
+
+  	// calculate "possible score" integer
+    var questionCountArray = document.getElementsByClassName('question');
+
+  		var questionCounter = 0;
+  		for (var i = 0, length = questionCountArray.length; i < length; i++) {
+  			questionCounter++;
+  		}
+
+  	// if not 4/4, you are not eligible for carers
+  		var showScore = ""
+  		if (calcScore < questionCounter){
+  		showScore = "You are not eligible for Carers Allowance"
+  		};
+  	// if 4/4, Eligible for carers allowance
+  		if (calcScore === questionCounter) {
+  			showScore = showScore + "Click <a href=HTML/second_page.html> here </a> to continue the survey"
+  		};
+  		document.getElementById('userScore').innerHTML = showScore;
+  	}
+
+
+  $(document).ready(function() {
+
+
+  	$('#submitButton').click(function() {
+  		$(this).hide();
+  	});
+  });
+
+
+  </script>
+</html>

@@ -1,3 +1,14 @@
+//$(document).ready(function() {
+  //$('#submitButton').click(function() {
+    //if($('input[name=q1]:checked').length<=0)
+  //  {
+  //   alert("Please select an option for every questio in order to continue.")
+  //  }
+//  });
+//});
+
+
+
 $(document).ready(
   function(){
     $("#show_pip_rates").hide();

@@ -37,30 +37,32 @@
         Yes <br>
           <input type="radio" name="resident_UK" value="no">
         No <br>
-        <p> You are not in full time education </p>
-        <input type="radio" name="education" value="yes">
+
+      <h1> You must also answer no to all of the following: </h1>
+        <p class="question"> Are you in in full time education? </p>
+        <input class="answer" type="radio" name="q5" value="0">
         Yes <br>
-          <input type="radio" name="education" value="no">
+          <input class="answer" type="radio" name="q5" value="1">
         No <br>
-        <p> You are not studying for 21 hours a week or more </p>
-        <input type="radio" name="study_time" value="yes">
+        <p class="question"> Are you studying for 21 hours a week or more? </p>
+        <input class="answer" type="radio" name="q6" value="0">
         Yes <br>
-          <input type="radio" name="study_time" value="no">
+          <input class="answer" type="radio" name="q6" value="1">
         No <br>
-        <p> You earn no more than £110 a week (after taxes, care costs while you’re at work and 50% of what you pay into your pension) - don’t count your pension as income </p>
-        <input type="radio" name="earnings" value="yes">
+        <p class="question"> Do you earn more than £110 a week (after taxes, care costs while you’re at work and 50% of what you pay into your pension)? (Don’t count your pension as income) </p>
+        <input class="answer" type="radio" name="q7" value="0">
         Yes <br>
-          <input type="radio" name="earnings" value="no">
+          <input class="answer" type="radio" name="q7" value="1">
         No <br>
-        <p> You are not subject to immigration control </p>
-        <input type="radio" name="immigration_control" value="yes">
+        <p class="question"> Are you subject to immigration control </p>
+        <input class="answer" type="radio" name="q8" value="0">
         Yes <br>
-          <input type="radio" name="immigration_control" value="no">
+          <input class="answer" type="radio" name="q8" value="1">
         No <br>
-        <p> You are not receiving the full state pension </p>
-        <input type="radio" name="pension" value="yes">
+        <p class="question"> Are you receiving the full state pension? </p>
+        <input class="answer" type="radio" name="q9" value="0">
         Yes <br>
-          <input type="radio" name="pension" value="no">
+          <input class="answer" type="radio" name="q9" value="1">
         No <br>
         <br>
         <input type="submit" value="Submit">
