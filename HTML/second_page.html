@@ -102,9 +102,52 @@
                      <td> £57.45 </td>
                    </tr>
                  </table>
-
                </div>
+          <p> Armed Forces Independence Payment <input type="radio" name="select" value="select"> </p>
+          <p> Attendance Allowance <input type="radio" name="select" value="select"> </p>
+          <p> Constant Attendance Allowance <input type="radio" name="select" value="select"> </p>
+          <select name="other_benefit">
+            <option value="blank"> Select an option </option>
+            <option value="war_disablement"> War Disablement Pension </option>
+            <option value="industrial_industries"> Industrial Injuries Disablement Benefit </option>
+          </select>
+          <br /> <br />
+          <select name="weekly_rate">
+            <option value="blank"> Select an option </option>
+            <option value="week_rate"> Part Day </option>
+            <option value="week_rate"> Full Day (basic) </option>
+            <option value="week_rate"> Intermediate </option>
+            <option value="week_rate"> Exceptional </option>
+          </select>
+          <p id="show_allowance"> Click here to see table of weekly rates </p>
+           <div id="show_weekly_rates">
+             <table style="width:100%">
+               <tr>
+                 <th> Payment </th>
+                 <th> Weekly Rate </th>
+               </tr>
+               <tr>
+                 <td> Part Day </td>
+                 <td> £33.60 </td>
+              </tr>
+              <tr>
+                <td> Full Day (Basic) </td>
+                <td> £67.20 </td>
+              </tr>
+              <tr>
+                <td> Intermediate </td>
+                <td> £100.80 </td>
+              </tr>
+              <tr>
+                <td> Exceptional </td>
+                <td> £134.40 </td>
+              </tr>
+             </table>
+           </div>
+          <p> None of the above <input type="radio" name="select" value="select"> </p>
       </form>
     </div>
+
+    <button class="quizSubmit" id="secondButton" type="button" value="button"> Go to next page </button>
   </body>
 </html>
