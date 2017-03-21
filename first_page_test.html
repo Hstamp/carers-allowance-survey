@@ -93,15 +93,14 @@
 
   <script>
   function submitQuiz() {
-    if($('input[name=q1]:checked').length<=0)
-    {
-    alert("Please select an option for every question in order to continue.")
-    return
-    }
 
-  		console.log('submitted');
-
-  	// get each answer score
+      if(( ($('input[name=q1]:checked').length<=0) || ($('input[name=q2]:checked').length<=0) || ($('input[name=q3]:checked').length<=0) || ($('input[name=q4]:checked').length<=0) || ($('input[name=q5]:checked').length<=0) || ($('input[name=q6]:checked').length<=0) || ($('input[name=q7]:checked').length<=0) || ($('input[name=q8]:checked').length<=0) || ($('input[name=q9]:checked').length<=0)))
+      {
+      alert("Please select an option for every question in order to continue.");
+      console.log('Not Checked');
+      return;
+      }
+  	// get each question score
   		function answerScore (qName) {
   			var radiosNo = document.getElementsByName(qName);
 
@@ -111,13 +110,12 @@
   					var answerValue = Number(radiosNo[i].value);
   				}
   			}
-  			// change NaNs to zero
+  			// change NaNs value to 0
   			if (isNaN(answerValue)) {
-  				answerValue = 0;
+        answerValue = 0;
   			}
   			return answerValue;
   		}
-
   	// calc score with answerScore function
   		var calcScore = (answerScore('q1') + answerScore('q2') + answerScore('q3') + answerScore('q4') + answerScore('q5') + answerScore('q6') + answerScore('q7') + answerScore('q8') + answerScore('q9'));
   		console.log("CalcScore: " + calcScore); // it works! To Test in console
@@ -150,13 +148,6 @@
        document.getElementById('correctAnswer9').innerHTML = "You cannot apply for Carer's Allowance if you are receiving the full state pension.";
       }
 
-
-  	// function to return correct answer string
-  	//	function correctAnswer (correctStringNo, qNumber) {
-  	//		console.log("qNumber: " + qNumber);  // logs 1,2,3,4 after called below
-  	//		return ("You are not eligible for carers allowance because you answered 'no' to question " + qNumber + "</strong>");
-    //  }
-
   	// calculate "possible score" integer
     var questionCountArray = document.getElementsByClassName('question');
 
@@ -168,7 +159,7 @@
   	// if not 4/4, you are not eligible for carers
   		var showScore = ""
   		if (calcScore < questionCounter){
-  		showScore = "You are not eligible for Carers Allowance"
+  		showScore = "You are not eligible for Carers Allowance."
   		};
   	// if 4/4, Eligible for carers allowance
   		if (calcScore === questionCounter) {
@@ -177,15 +168,11 @@
   		document.getElementById('userScore').innerHTML = showScore;
   	}
 
-
   $(document).ready(function() {
-
-
-  	$('#submitButton').click(function() {
-  		$(this).hide();
-  	});
-  });
-
+  //  Hide submit button after clicked
+   //  $('#submitButton').click(function() {
+     //  $(this).hide();
+    });
 
   </script>
 </html>
