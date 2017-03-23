@@ -1,0 +1,87 @@
+<!DOCTYPE>
+<html>
+  <head>
+      <title> Carer's Allowance </title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="../jQuery/script.js"></script>
+      <link href="../CSS/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1> The person you care for must be in receipt of one of the following benefits </h1>
+    <p> Please select which benefit the person you care for is receiving, and
+      provide details using the drop down boxes provided.
+    <div class="form">
+          <p> Personal Independence Payment (PIP) <input type="radio" name="opt1"> </p>
+          <p> Are you receiving the Daily Living Component? </p>
+      <form name="form1">
+            <select name="pip_living">
+              <option value="0"> Select an option </option>
+              <option value="1"> Daily Living Component - Standard Rate </option>
+              <option value="2"> Daily Living Component - Enhanced Rate </option>
+              <option value="3"> None </option>
+            </select>
+      </form>
+        <p> Are you receiving the Mobility Component? </p>
+      <form name="form2">
+            <select name="pip_mobility">
+              <option value="0"> Select an option </option>
+              <option value="1"> Mobility Component - Standard Rate </option>
+              <option value="2"> Mobility Component - Enhanced Rate </option>
+              <option value="3"> None </option>
+            </select>
+       </form>
+       <form name="form3">
+              <p> Daily Living Component (DLA) <input type="radio" name="opt2"></p>
+              <select name="dla_care">
+                <option value="0"> Select an option </option>
+                <option value="1"> Care Component - Lowest Rate </option>
+                <option value="2"> Care Component - Middle Rate </option>
+                <option value="3"> Care Component - Highest Rate </option>
+                <option value="4"> None </option>
+              </select>
+        </form>
+              <br /> <br />
+        <form name="form4">
+              <select name="dla_mobility">
+                <option value="0"> Select an option </option>
+                <option value="1"> Mobility Component - Lower Rate </option>
+                <option value="2"> Mobility Component - Higher Rate </option>
+                <option value="3"> None </option>
+              </select>
+        </form>
+            <br /> <br />
+          <button class="quizSubmit" id="secondButton" onClick="continueQuiz()" type="button" value="button"> Go to next page </button>
+
+        <h2 class="quizWin" id="passedTest"> </h2>
+
+      </body>
+     <script>
+     function continueQuiz () {
+
+        var i = 0
+        var result1=document.form1.pip_living.selectedIndex
+        var result2=document.form2.pip_mobility.selectedIndex
+        var result3=document.form3.dla_care.selectedIndex
+        var result4=document.form4.dla_mobility.selectedIndex
+
+        if (((result1 == 1) || (result1 == 2)) && (result2)) {
+          document.getElementById("passedTest").innerHTML = "You are Elligible for Carer's Allowance! We just have a few more questions to ask...";
+        }
+        else if (((result1 == 1) || (result1 == 2)) && (!result2)) {
+          console.log("Elligible");
+        }
+        else if (((result3 == 2) || (result3 == 3)) && (result4)) {
+          console.log("Elligible");
+        }
+        else if (((result3 == 2) || (result3 == 3)) && (!result4)) {
+          console.log("Elligble");
+        } else {
+          console.log("Not Elligible");
+        }
+
+  }
+
+
+
+     </script>
+ </html>
