@@ -40,7 +40,7 @@
                 <option value="4"> None </option>
               </select>
         </form>
-              <br /> <br />
+              <br /> 
         <form name="form4">
               <select name="dla_mobility">
                 <option value="0"> Select an option </option>
@@ -49,6 +49,42 @@
                 <option value="3"> None </option>
               </select>
         </form>
+        <form name="form5">
+        	<p> Armed Forces Independence Payment <input type="radio" name="opt3"> </p>
+        	<select name="armed_forces">
+        		<option value="0"> Select an option </option>
+        		<option value="1"> Yes </option>
+        		<option value="2"> No </option>
+        	</select>
+        </form>
+        
+        <form name="form6">
+        	<p> Attendance Allowance <input type="radio" name="select" value="select"> </p>
+        	<select name="attendance">
+        		<option value="0"> Select an option </option>
+        		<option value="1"> Yes </option>
+        		<option value="2"> No </option>
+        	</select>
+        </form>	
+        <form name="form7">
+        	<p> Constant Attendance Allowance <input type="radio" name="select" value="select"> </p>
+          	<select name="other_benefit">
+            	<option value="0"> Select an option </option>
+            	<option value="1"> War Disablement Pension </option>
+            	<option value="2"> Industrial Injuries Disablement Benefit </option>
+          	</select>
+          	<br /> 
+        </form>
+        <form name="form8">
+          	<select name="weekly_rate">
+            	<option value="0"> Select an option </option>
+            	<option value="1"> Part Day </option>
+            	<option value="2"> Full Day (basic) </option>
+            	<option value="3"> Intermediate </option>
+           		<option value="4"> Exceptional </option>
+          	</select>
+    	</form> 	
+        
             <br /> <br />
           <button class="quizSubmit" id="secondButton" onClick="continueQuiz()" type="button" value="button"> Go to next page </button>
 
@@ -63,20 +99,30 @@
         var result2=document.form2.pip_mobility.selectedIndex
         var result3=document.form3.dla_care.selectedIndex
         var result4=document.form4.dla_mobility.selectedIndex
+        var result5=document.form5.armed_forces.selectedIndex
+        var result6=document.form6.attendance.selectedIndex
+        var result7=document.form7.other_benefit.selectedIndex
+        var result8=document.form8.weekly_rate.selectedIndex
+        
 
         if (((result1 == 1) || (result1 == 2)) && (result2)) {
-          document.getElementById("passedTest").innerHTML = "You are Elligible for Carer's Allowance! We just have a few more questions to ask...";
+          document.getElementById("passedTest").innerHTML = "You are Eligible for Carer's Allowance! We just have a few more questions to ask...";
         }
         else if (((result1 == 1) || (result1 == 2)) && (!result2)) {
-          console.log("Elligible");
+          console.log("Eligible");
         }
         else if (((result3 == 2) || (result3 == 3)) && (result4)) {
-          console.log("Elligible");
+          console.log("Eligible");
         }
         else if (((result3 == 2) || (result3 == 3)) && (!result4)) {
-          console.log("Elligble");
-        } else {
-          console.log("Not Elligible");
+          console.log("Eligible");
+        } 
+        else if ((result5 == 1) || (result6 == 1)) {
+        	console.log("Eligible"); 
+        }
+        else if (((result7 == 1) && (result8 == 2)) || ((result7 == 2) && (result8 == 
+        else {
+          console.log("Not Eligible");
         }
 
   }
