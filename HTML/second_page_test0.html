@@ -1,0 +1,224 @@
+<!DOCTYPE>
+<html>
+  <head>
+      <title> Carer's Allowance </title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="../jQuery/script.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+      <link href="../CSS/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1> The person you care for must be in receipt of one of the following benefits </h1>
+    <p> Please select which benefit the person you care for is receiving, and
+      provide details using the drop down boxes provided.
+    <div class="form">
+          <p> Personal Independence Payment (PIP) <input type="radio" name="opt1"> </p>
+          <p class="small_p"> Are you receiving the Daily Living Component? </p>
+      <form name="form1">
+            <select name="pip_living">
+              <option value="0"> Select an option </option>
+              <option value="1"> Daily Living Component - Standard Rate </option>
+              <option value="2"> Daily Living Component - Enhanced Rate </option>
+              <option value="3"> None </option>
+            </select>
+      </form>
+        <p class="small_p"> Are you receiving the Mobility Component? </p>
+      <form name="form2">
+            <select name="pip_mobility">
+              <option value="0"> Select an option </option>
+              <option value="1"> Mobility Component - Standard Rate </option>
+              <option value="2"> Mobility Component - Enhanced Rate </option>
+              <option value="3"> None </option>
+            </select>
+       </form>
+
+       <p id="show_pip" class="small_p"> Click here to see Daily Living and Mobility rates. </p>
+       <div id="show_pip_rates">
+          <table style="width:100%" class="small_p">
+            <tr>
+              <th> Component </th>
+              <th> Weekly Rate </th>
+            </tr>
+            <tr>
+              <td> Daily Living Standard </td>
+              <td> £55.10 </td>
+            </tr>
+            <tr>
+              <td> Daily Living Enhanced </td>
+              <td> £82.30 </td>
+            </tr>
+            <tr> <td> ------- </td>
+            </tr>
+            <tr>
+              <td> Mobility Standard </td>
+              <td> £21.80 </td>
+            </tr>
+            <tr>
+              <td> Mobility Enhanced </td>
+              <td> £57.45 </td>
+            </tr>
+          </table>
+        </div>
+
+       <form name="form3">
+              <p> Daily Living Component (DLA) <input type="radio" name="opt2"></p>
+              <p class="small_p"> Are you receiving the Care component? </p>
+              <select name="dla_care">
+                <option value="0"> Select an option </option>
+                <option value="1"> Care Component - Lowest Rate </option>
+                <option value="2"> Care Component - Middle Rate </option>
+                <option value="3"> Care Component - Highest Rate </option>
+                <option value="4"> None </option>
+              </select>
+        </form>
+              <p class="small_p"> Are you receiving the mobility component? </p>
+        <form name="form4">
+              <select name="dla_mobility">
+                <option value="0"> Select an option </option>
+                <option value="1"> Mobility Component - Lower Rate </option>
+                <option value="2"> Mobility Component - Higher Rate </option>
+                <option value="3"> None </option>
+              </select>
+        </form>
+
+        <p id="show_dla" class="small_p"> Click here to see Daily Living and Mobility rates. </p>
+        <div id="show_dla_rates">
+          <table style="width:100%" class="small_p">
+             <tr>
+               <th> Component </th>
+               <th> Weekly Rate </th>
+             </tr>
+             <tr>
+               <td> Lowest Care </td>
+               <td> £21.80 </td>
+             </tr>
+             <tr>
+               <td> Middle Care </td>
+               <td> £55.10 </td>
+             </tr>
+             <tr>
+               <td> Highest Care </td>
+               <td> £82.30 </td>
+              </tr>
+              <tr> <td> ------- </td>
+              </tr>
+              <tr>
+               <td> Lower Mobility </td>
+               <td> £21.80 </td>
+             </tr>
+             <tr>
+               <td> Higher Mobility </td>
+               <td> £57.45 </td>
+             </tr>
+           </table>
+         </div>
+
+        <form name="form5">
+        	<p> Armed Forces Independence Payment <input type="radio" name="opt3" value="1"> </p>
+        </form>
+
+        <form name="form6">
+        	<p> Attendance Allowance <input type="radio" name="opt4" value="1"> </p>
+        </form>
+
+        <form name="form7">
+        	<p> Constant Attendance Allowance <input type="radio" name="opt5" value="select"> </p>
+          <p class="small_p"> Which benefit are you receiving? </p>
+          	<select name="other_benefit">
+            	<option value="0"> Select an option </option>
+            	<option value="1"> War Disablement Pension </option>
+            	<option value="2"> Industrial Injuries Disablement Benefit </option>
+          	</select>
+          	<br />
+        </form>
+        <p class="small_p"> Which weekly rate are you receiving? </p>
+        <form name="form8">
+          	<select name="weekly_rate">
+            	<option value="0"> Select an option </option>
+            	<option value="1"> Part Day </option>
+            	<option value="2"> Full Day (basic) </option>
+            	<option value="3"> Intermediate </option>
+           		<option value="4"> Exceptional </option>
+          	</select>
+    	</form>
+
+      <p id="show_allowance" class="small_p"> Click here to see table of weekly rates </p>
+       <div id="show_weekly_rates" class="small_p">
+         <table style="width:100%">
+           <tr>
+             <th> Payment </th>
+             <th> Weekly Rate </th>
+           </tr>
+           <tr>
+             <td> Part Day </td>
+             <td> £33.60 </td>
+          </tr>
+          <tr>
+            <td> Full Day (Basic) </td>
+            <td> £67.20 </td>
+          </tr>
+          <tr>
+            <td> Intermediate </td>
+            <td> £100.80 </td>
+          </tr>
+          <tr>
+            <td> Exceptional </td>
+            <td> £134.40 </td>
+          </tr>
+         </table>
+       </div>
+
+      <form name="form9">
+        <p> The person I care for does not receive any of these benefits <input type="radio" name="opt9" value="0"></p>
+      </form>
+
+    <button class="quizSubmit" id="secondButton" onClick="continueQuiz()" type="button" value="button"> Go to next page </button>
+
+        <h2 class="quizWin" id="passedTest"> </h2>
+
+      </body>
+     <script>
+     function continueQuiz () {
+
+        var i = 0
+        var result1=document.form1.pip_living.selectedIndex
+        var result2=document.form2.pip_mobility.selectedIndex
+        var result3=document.form3.dla_care.selectedIndex
+        var result4=document.form4.dla_mobility.selectedIndex
+        var $result_five = parseInt($("input[name=opt3]:checked").val());
+        var $result_six = parseInt($("input[name=opt4]:checked").val());
+        var result7=document.form7.other_benefit.selectedIndex
+        var result8=document.form8.weekly_rate.selectedIndex
+        var $result_nine =  parseInt($("input[name=opt9]:checked").val());
+
+
+
+        if (((result1 == 1) || (result1 == 2)) && (result2)) {
+          document.getElementById("passedTest").innerHTML = "You are Eligible for Carer's Allowance! <a href=third_page.html> We just have a few more questions to ask... </a>";
+        }
+        else if (((result1 == 1) || (result1 == 2)) && (!result2)) {
+          document.getElementById("passedTest").innerHTML = "You are Eligible for Carer's Allowance! <a href=third_page.html> We just have a few more questions to ask... </a>";
+        }
+        else if (((result3 == 2) || (result3 == 3)) && (result4)) {
+          document.getElementById("passedTest").innerHTML = "You are Eligible for Carer's Allowance! <a href=third_page.html> We just have a few more questions to ask... </a>";
+        }
+        else if (((result3 == 2) || (result3 == 3)) && (!result4)) {
+          document.getElementById("passedTest").innerHTML = "You are Eligible for Carer's Allowance! <a href=third_page.html> We just have a few more questions to ask... </a>";
+        }
+        else if (($result_five == 1) || ($result_six == 1)) {
+        	document.getElementById("passedTest").innerHTML = "You are Eligible for Carer's Allowance! <a href=third_page.html> We just have a few more questions to ask... </a>";
+        }
+        else if (((result7 == 1) && (result8 == 2)) || ((result7 == 2) && ((result8 == 2) || (result8 == 3) || (result8 == 4)))) {
+          document.getElementById("passedTest").innerHTML = "You are Eligible for Carer's Allowance! <a href=third_page.html> We just have a few more questions to ask... </a>";
+        }
+        else if ($result_nine == 0){
+          document.getElementById("passedTest").innerHTML = "Unfortunately, you are not Eligible for Carer's Allowance. If you would like to learn more about the eligibility criteria, please see the <a href=https://www.gov.uk/carers-allowance/eligibility> gov.uk website </a>";
+        }
+        else {
+          document.getElementById("passedTest").innerHTML = "Unfortunately, you are not Eligible for Carer's Allowance. If you would like to learn more about the eligibility criteria, please see the <a href=https://www.gov.uk/carers-allowance/eligibility> gov.uk website </a>";
+        }
+      };
+
+
+     </script>
+ </html>

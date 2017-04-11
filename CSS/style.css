@@ -2,6 +2,18 @@ body {
     font-family: 'Oxygen', sans-serif;
 }
 
+body {
+  background-color: #F7F5E6;
+}
+
+.container h1 {
+  color: #52658F;
+}
+
 th {
   text-align: left;
+}
+
+.small_p {
+  font-size: 14px;
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+  <head>
+      <title> Carer's Allowance </title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="../jQuery/script.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+      <link href="../CSS/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1> Please answer these final questions.. </h1>
+
+    <form name="final_questions">
+      <p> Does the person you care for live with any non-dependents? </p>
+      <input class="answer" type="radio" id="q1" name="q1" value="1">
+      Yes <br>
+        <input class="answer" type="radio" id="q1" name="q1" value="0">
+      No <br>
+      <p class="small_p"> A non-dependent is someone who is over the age of 18 and lives with you. This does not include your partner.
+      This could be an adult child, relative of friend </p>
+      <p class="small_p"> It does not include boarders, sub-tenants or joint tenants </p>
+      <p> Does the person you live with have another person who cares for them who is also receiving Carer’s Allowance? </p>
+      <input class="answer" type="radio" id="q2" name="q2" value="1">
+      Yes <br>
+      <input class="answer" type="radio" id="q2" name="q2" value="0">
+      No <br>
+    </form>
+
+    <button class="quizSubmit" id="thirdButton" onClick="lastQuiz()" type="button" value="button"> Go to next page </button>
+
+    <h2 class="quizWin" id="passedFinaltest"> </h2>
+  </body>
+
+  <script>
+
+  function lastQuiz() {
+
+    var $first_question = parseInt($("input[name=q1]:checked").val());
+    var $second_question = parseInt($("input[name=q2]:checked").val());
+
+    if (($first_question == 1) && ($second_question == 1)) {
+      document.getElementById("passedFinaltest").innerHTML = "Congratulations, you can apply for Carer's Allowance! Click here for further information on how to do this.";
+    } else {
+      document.getElementById("passedFinaltest").innerHTML = "Unfortunately, you are not elligible";
+    }
+  }
+  </script>
+
+  </html>
